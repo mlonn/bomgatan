@@ -32,5 +32,12 @@
     "url": "http://plex.lonn.xyz",
     "description": "A plex server",
     "fontawesome_icon": "fa-film"
+  },
+    
+  "Sync": {
+    "title": "sync",
+    "url": "http://http://bomgatan.asuscomm.com:8888/gui/",
+    "description": "Resilio sync",
+    "fontawesome_icon": "fa-refresh"
   }
 }
