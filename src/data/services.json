@@ -3,21 +3,21 @@
     "title": "sonarr",
     "url": "http://sonarr.lonn.xyz",
     "description": "Auto dowload TV-series.",
-    "fontawesome_icon": "fa-cutlery"
+    "fontawesome_icon": "fa-television"
   },
 
   "deluge": {
     "title": "deluge",
     "url": "http://deluge.lonn.xyz ",
     "description": "A torrent client",
-    "fontawesome_icon": "fa-cutlery"
+    "fontawesome_icon": "fa-download"
   },
 
   "plexpy": {
     "title": "plexpy",
     "url": "http://plexpy.lonn.xyz",
     "description": "Statistics from plex",
-    "fontawesome_icon": "fa-calendar"
+    "fontawesome_icon": "fa-pie-chart"
   },
 
   "router": {
@@ -31,6 +31,6 @@
     "title": "plex",
     "url": "http://plex.lonn.xyz",
     "description": "A plex server",
-    "fontawesome_icon": "fa-user-secret"
+    "fontawesome_icon": "fa-film"
   }
 }
