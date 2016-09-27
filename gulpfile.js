@@ -55,17 +55,17 @@ var PATHS = {
   ]
 };
 
-// Delete the "dist" folder
+// Delete the "docs" folder
 // This happens every time a build starts
 gulp.task('clean', function(done) {
-  rimraf('dist', done);
+  rimraf('docs', done);
 });
 
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 gulp.task('copy', function() {
   return gulp.src(PATHS.assets)
-    .pipe(gulp.dest('dist/assets'));
+    .pipe(gulp.dest('docs/assets'));
 });
 
 // Copy page templates into finished HTML files
@@ -78,7 +78,7 @@ gulp.task('pages', function() {
       data: 'src/data/',
       helpers: 'src/helpers/'
     }))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('docs'))
     .on('finish', browser.reload);
 });
 
@@ -113,7 +113,7 @@ gulp.task('sass', function() {
     .pipe(uncss)
     .pipe(minifycss)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(gulp.dest('docs/assets/css'))
     .pipe(browser.reload({ stream: true }));
 });
 
@@ -130,11 +130,11 @@ gulp.task('javascript', function() {
     .pipe($.concat('app.js'))
     .pipe(uglify)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(gulp.dest('docs/assets/js'))
     .on('finish', browser.reload);
 });
 
-// Copy images to the "dist" folder
+// Copy images to the "docs" folder
 // In production, the images are compressed
 gulp.task('images', function() {
   var imagemin = $.if(isProduction, $.imagemin({
@@ -143,11 +143,11 @@ gulp.task('images', function() {
 
   return gulp.src('src/assets/img/**/*')
     .pipe(imagemin)
-    .pipe(gulp.dest('dist/assets/img'))
+    .pipe(gulp.dest('docs/assets/img'))
     .on('finish', browser.reload);
 });
 
-// Build the "dist" folder by running all of the above tasks
+// Build the "docs" folder by running all of the above tasks
 gulp.task('build', function(done) {
   sequence('clean', ['pages', 'sass', 'javascript', 'images', 'copy'], done);
 });
@@ -155,7 +155,7 @@ gulp.task('build', function(done) {
 // Start a server with LiveReload to preview the site in
 gulp.task('server', ['build'], function() {
   browser.init({
-    server: 'dist', port: PORT
+    server: 'docs', port: PORT
   });
 });
 
