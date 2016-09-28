@@ -36,7 +36,7 @@
     
   "Sync": {
     "title": "sync",
-    "url": "http://http://bomgatan.asuscomm.com:8888/gui/",
+    "url": "http://sync.lonn.xyz",
     "description": "Resilio sync",
     "fontawesome_icon": "fa-refresh"
   }
